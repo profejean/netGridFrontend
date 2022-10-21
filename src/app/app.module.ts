@@ -9,12 +9,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SecureComponent } from './secure/secure.component';
+import { AccountComponent } from './secure/account/account.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SecureComponent
+    SecureComponent,
+    AccountComponent
 
   ],
   imports: [

@@ -8,7 +8,9 @@ import { Component, OnInit, SimpleChanges } from '@angular/core';
 export class AppComponent implements OnInit{
 
   loggedIn = false;
+
   ngOnInit() {
+    console.log(localStorage.getItem('token'));
     this.loggedIn = localStorage.getItem('token') !== null;
   }
 
@@ -16,4 +18,6 @@ export class AppComponent implements OnInit{
     localStorage.removeItem('token');
     window.location.reload();
   }
+
+
 }

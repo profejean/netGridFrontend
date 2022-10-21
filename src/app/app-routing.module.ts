@@ -1,3 +1,5 @@
+import { AuthGuardService } from './services/auth-guard.service';
+import { AccountComponent } from './secure/account/account.component';
 import { RegisterComponent } from './public/register/register.component';
 import { LoginComponent } from './public/login/login.component';
 import { HomeComponent } from './public/home/home.component';
@@ -19,7 +21,12 @@ const routes: Routes = [
   },
   {
     path: 'secure',
-    component: SecureComponent
+    component: SecureComponent,canActivate: [AuthGuardService],
+    children: [
+      { path: '', component: AccountComponent }
+
+    ]
+
   }
 ];
 

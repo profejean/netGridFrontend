@@ -9,11 +9,11 @@ export class AuthGuardService implements CanActivate{
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
+
     if(this.authService.IsAuthenticated()){
       return true;
     } else {
       this.router.navigate(['login']);
-      localStorage.removeItem('token');
       return false;
     }
   }

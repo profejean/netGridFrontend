@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { LoginService } from './../../services/login.service';
@@ -15,8 +15,8 @@ export class LoginComponent {
 
   //forma data
   form = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
   });
 
   // validate data
@@ -36,11 +36,11 @@ export class LoginComponent {
     this.loginService.login(this.form.value)
       .subscribe({
         next: (data: any) => {
+          this.authService.login();
           localStorage.setItem('token', data.token);
           if (localStorage.getItem('token')) {
-            this.authService.login();
             this.router.navigate([''])
-            .then(() => {
+              .then(() => {
               window.location.reload();
             });
           } else {

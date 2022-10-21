@@ -5,6 +5,7 @@ export class AuthService {
 
   login() {
     this.loggedIn = true;
+    console.log('login auth services  ' + this.loggedIn);
   }
 
   logout() {
@@ -12,6 +13,7 @@ export class AuthService {
   }
 
   IsAuthenticated() {
+    console.log('IsAuthenticated ' + this.loggedIn);
     return this.loggedIn;
   }
 }

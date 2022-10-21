@@ -1,7 +1,7 @@
 import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import { RegisterService } from './../../services/register.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,10 +15,10 @@ export class RegisterComponent {
 
   //forma data
   form = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-    password_confirmation: new FormControl(''),
-    name: new FormControl('')
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [Validators.required, Validators.minLength(8)]),
+    password_confirmation: new FormControl("", [Validators.required, Validators.minLength(8)]),
+    name: new FormControl("", [Validators.required, Validators.maxLength(50)])
   });
 
   // validate data
