@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -14,5 +14,6 @@ export class AppComponent implements OnInit{
 
   logout() {
     localStorage.removeItem('token');
+    window.location.reload();
   }
 }
