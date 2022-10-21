@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PublicComponent } from './public.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -15,6 +16,7 @@ import { PublicComponent } from './public.component';
     PublicComponent,
     HomeComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     CommonModule,
