@@ -40,8 +40,11 @@ export class RegisterComponent {
     this.registerService.register(this.form.value)
       .subscribe({
         next: (data: any) => {
-          console.log(data);
+
           localStorage.setItem('token', data.token);
+          localStorage.setItem('userId', data.userId);
+          localStorage.setItem('userName', data.userName);
+
           if (localStorage.getItem('token')) {
             this.authService.login();
             this.router.navigate([''])

@@ -1,19 +1,21 @@
+import { UpdateUser } from './../models/updateUser';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
-import { Login } from '../models/login';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class UpdateUserService {
   url = environment.apiURL;
+  headers = environment.headers;
   constructor(private http: HttpClient) { }
 
-  login(data: Login): Observable<any>{
+  update(data: UpdateUser,id:any): Observable<any>{
 
-    return this.http.post<any>(this.url + 'login', data);
+    return this.http.patch<any>(`${this.url}user_update/${id}`, data, { 'headers': this.headers });
   }
 }

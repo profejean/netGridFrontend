@@ -10,13 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SecureComponent } from './secure/secure.component';
 import { AccountComponent } from './secure/account/account.component';
+import { SecureModule } from './secure/secure.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SecureComponent,
-    AccountComponent
+    AppComponent
 
   ],
   imports: [
@@ -24,7 +23,8 @@ import { AccountComponent } from './secure/account/account.component';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    PublicModule
+    PublicModule,
+    SecureModule
   ],
   providers: [AuthGuardService,AuthService],
   bootstrap: [AppComponent]

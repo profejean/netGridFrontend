@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
@@ -5,19 +6,31 @@ import { Component, OnInit, SimpleChanges } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   loggedIn = false;
+  userName = false;
+  userId = false;
+  name = environment.userName;
+
 
   ngOnInit() {
-    console.log(localStorage.getItem('token'));
     this.loggedIn = localStorage.getItem('token') !== null;
+
+    this.userName = localStorage.getItem('userName') !== null;
+
+    this.userId = localStorage.getItem('userId') !== null;
+
   }
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userId');
     window.location.reload();
   }
+
+
 
 
 }

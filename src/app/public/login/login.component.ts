@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { AuthService } from './../../services/auth.service';
 import { LoginService } from './../../services/login.service';
 
@@ -12,6 +13,9 @@ import { LoginService } from './../../services/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+
+
 
   //forma data
   form = new FormGroup({
@@ -36,8 +40,15 @@ export class LoginComponent {
     this.loginService.login(this.form.value)
       .subscribe({
         next: (data: any) => {
+
           this.authService.login();
+
           localStorage.setItem('token', data.token);
+          localStorage.setItem('userId', data.userId);
+          localStorage.setItem('userName', data.userName);
+
+
+          //token conection
           if (localStorage.getItem('token')) {
             this.router.navigate([''])
               .then(() => {

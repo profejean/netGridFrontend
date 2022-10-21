@@ -7,6 +7,9 @@ import { SecureComponent } from './secure/secure.component';
 import { PublicComponent } from './public/public.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CharacterComponent } from './secure/character/character.component';
+import { OnlyCharacterComponent } from './secure/character/only-character/only-character.component';
+
 
 
 const routes: Routes = [
@@ -20,10 +23,13 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'secure',
+    path: 'information',
     component: SecureComponent,canActivate: [AuthGuardService],
     children: [
-      { path: '', component: AccountComponent }
+      { path: '', component: AccountComponent },
+      { path: 'character', component: CharacterComponent },
+      { path: 'only/:id', component: OnlyCharacterComponent },
+
 
     ]
 

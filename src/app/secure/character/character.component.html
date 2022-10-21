@@ -1,0 +1,36 @@
+<div class="flex-container mt-5">
+  <div class="row">
+    <div>
+      <h4 class="title text-center">{{this.messages}}</h4>
+    </div>
+    <div>
+      <table class="table table-dark table-striped text-center">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">ESPECIE</th>
+            <th scope="col">SEXO</th>
+            <th scope="col">OPCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of this.data">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.species}}</td>
+            <td>
+              <button class="w-100 btn btn-lg btn-primary" type="button" (click)="show(data.id)">
+                Ver
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+

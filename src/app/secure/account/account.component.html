@@ -1,1 +1,64 @@
-<p>account works!</p>
+<div class="text-center">
+
+  <div class="form-signin p-2 w-50 m-auto">
+    <form class="form" [formGroup]="form">
+      <h1 class="h3 mb-3 fw-normal">Actualizar Usuario</h1>
+
+      <div>
+        <ul>
+          <li class="text-danger" *ngIf="messageValidate">
+            {{messageValidate}}
+          </li>
+          <li class="text-danger" *ngIf="emailValidate">
+            {{emailValidate}}
+          </li>
+          <li class="text-danger" *ngIf="nameValidate">
+            {{nameValidate}}
+          </li>
+          <li class="text-danger" *ngIf="addressValidate">
+            {{addressValidate}}
+          </li>
+          <li class="text-danger" *ngIf="birthdateValidate">
+            {{birthdateValidate}}
+          </li>
+          <li class="text-danger" *ngIf="cityValidate">
+            {{cityValidate}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" placeholder="nombre" id="name" formControlName="name">
+        <label for="name">Nombre</label>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" placeholder="name@example.com" id="email" formControlName="email">
+        <label for="email">Correo</label>
+      </div>
+      <div class="form-floating">
+        <input type="date" class="form-control"  id="birthdate" formControlName="birthdate">
+        <label for="birthdate">Fecha de nacimiento</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" placeholder="Ciudad" id="city" formControlName="city">
+        <label for="city">Ciudad</label>
+      </div>
+      <div class="form-floating">
+        <textarea  class="form-control" id="address" cols="30" rows="30" formControlName="address"
+          placeholder="Dirección"></textarea>
+        <label for="address">Dirección</label>
+      </div>
+
+
+
+      <button class="w-100 btn btn-lg btn-primary" type="button" (click)="update()"
+        [disabled]="!form.valid">Actualizar</button>
+    </form>
+
+  </div>
+
+
+
+
+</div>
+

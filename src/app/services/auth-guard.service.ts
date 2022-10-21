@@ -1,6 +1,6 @@
 import { AuthService } from './auth.service';
 import { Injectable } from "@angular/core";
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from "@angular/router";
 
 @Injectable()
 export class AuthGuardService implements CanActivate{
@@ -14,6 +14,7 @@ export class AuthGuardService implements CanActivate{
       return true;
     } else {
       this.router.navigate(['login']);
+      localStorage.removeItem('token');
       return false;
     }
   }
