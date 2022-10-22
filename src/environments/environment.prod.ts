@@ -1,7 +1,7 @@
 import { HttpHeaders } from '@angular/common/http';
 export const environment = {
   production: true,
-  apiURL: 'http://localhost:8000',
+  apiURL: 'https://netgridbackendjean.herokuapp.com/api/',
   apiCharacterURL: 'https://rickandmortyapi.com/api/character',
   headers: new HttpHeaders()
   .set('content-type', 'application/json')
