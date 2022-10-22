@@ -1,28 +1,16 @@
-<nav class="navbar navbar-expand-lg bg-dark px-5">
+<nav class="navbar bg-dark">
   <div class="container-fluid">
     <a class="nav-link" routerLink="/">Inicio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a *ngIf="loggedIn" class="nav-link" routerLink="/information">Mi cuenta</a>
-        </li>
-        <li class="nav-item">
-          <a *ngIf="loggedIn" class="nav-link" routerLink="/information/character">Personajes</a>
-        </li>
 
-      </ul>
-    </div>
-  </div>
+        <a *ngIf="loggedIn" class="nav-link" routerLink="/information">Mi cuenta</a>
 
-  <div class="navbar-nav">
-    <a routerLink="/login" class="nav-link" *ngIf="!loggedIn">Entrar</a>
-    <a routerLink="/register" class="nav-link" *ngIf="!loggedIn">Registrarse</a>
-    <a routerLink="/account" class="nav-link mr-5" *ngIf="loggedIn">Bienvenido, {{this.name}}</a>
-    <a routerLink="/" class="nav-link" *ngIf="loggedIn" (click)="logout()">Salir</a>
+        <a *ngIf="loggedIn" class="nav-link" routerLink="/information/character">Personajes</a>
+
+        <a routerLink="/login" class="nav-link" *ngIf="!loggedIn">Entrar</a>
+        <a routerLink="/register" class="nav-link" *ngIf="!loggedIn">Registrarse</a>
+        <a routerLink="/account" class="nav-link mr-5" *ngIf="loggedIn">Bienvenido, {{this.name}}</a>
+        <a routerLink="/" class="nav-link" *ngIf="loggedIn" (click)="logout()">Salir</a>
+
   </div>
 </nav>
 
