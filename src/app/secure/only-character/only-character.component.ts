@@ -1,6 +1,4 @@
 import { FormGroup, FormControl } from '@angular/forms';
-import { Character } from 'src/app/models/character';
-
 import { Component, OnInit, Input } from '@angular/core';
 import { CharacterService } from 'src/app/services/character.service';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -22,7 +20,7 @@ export class OnlyCharacterComponent implements OnInit {
 
   constructor(
     private characterService: CharacterService,
-    private rutaActiva: ActivatedRoute
+    private routeActive: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +28,7 @@ export class OnlyCharacterComponent implements OnInit {
   }
 
   show() {
-    let params = this.rutaActiva.snapshot.params;
+    let params = this.routeActive.snapshot.params;
      this.characterService.show(params['id']).subscribe({
         next: (data: any) => {
           this.data = data;

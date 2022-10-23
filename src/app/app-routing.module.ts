@@ -8,7 +8,8 @@ import { PublicComponent } from './public/public.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CharacterComponent } from './secure/character/character.component';
-import { OnlyCharacterComponent } from './secure/character/only-character/only-character.component';
+import { OnlyCharacterComponent } from './secure/only-character/only-character.component';
+
 
 
 
@@ -28,7 +29,8 @@ const routes: Routes = [
     children: [
       { path: '', component: AccountComponent },
       { path: 'character', component: CharacterComponent },
-      { path: 'only/:id', component: OnlyCharacterComponent },
+      { path: 'only/:id', component: OnlyCharacterComponent }
+
 
 
     ]

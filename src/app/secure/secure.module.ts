@@ -7,7 +7,8 @@ import { CommonModule } from '@angular/common';
 import { AccountComponent } from './account/account.component';
 import { SecureComponent } from './secure.component';
 import { CharacterComponent } from './character/character.component';
-import { OnlyCharacterComponent } from './character/only-character/only-character.component';
+import { OnlyCharacterComponent } from './only-character/only-character.component';
+
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { OnlyCharacterComponent } from './character/only-character/only-characte
     AccountComponent,
     CharacterComponent,
     OnlyCharacterComponent
+
 
   ],
   imports: [
